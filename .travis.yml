@@ -2,4 +2,4 @@ install:
   - curl -sLo - http://j.mp/install-travis-docker | sh -xe
 
 script:
-  - ./run 'docker build -t moul/gdb . && docker run moul/gdb echo Build succeed'
+  - ./run 'docker build -t moul/gdb . && docker run --entrypoint=bash moul/gdb -ec "echo Build succeed"'
